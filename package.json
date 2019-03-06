@@ -1,0 +1,32 @@
+{
+	"name": "@nicolasparada/json-bigint",
+	"version": "0.2.0",
+	"description": "BigInt support for JSON encoding",
+	"main": "json-bigint.js",
+	"browser": "json-bigint.js",
+	"module": "json-bigint.js",
+	"files": [
+		"json-bigint.js"
+	],
+	"devDependencies": {
+		"esm": "^3.2.0"
+	},
+	"scripts": {
+		"test": "node -r esm json-bigint-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nicolasparada/js-json-bigint.git"
+	},
+	"keywords": [
+		"json",
+		"bigint",
+		"int64"
+	],
+	"author": "Nicolás Parada <parada.nicolas@outlook.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nicolasparada/js-json-bigint/issues"
+	},
+	"homepage": "https://github.com/nicolasparada/js-json-bigint#readme"
+}
