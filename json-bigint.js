@@ -1,24 +1,31 @@
 /**
  * @param {string} text
+ * @param {function(any,any):any=} reviver
  */
-export function parseJSON(text) {
+export function parseJSON(text, reviver) {
 	if (typeof text !== 'string') {
 		return null
 	}
-	return JSON.parse(text.replace(/([^\"]+\"\:\s*)(\d{16,})(\,\s*\"[^\"]+|}$)/g, '$1"$2n"$3'), reviver)
+	return JSON.parse(text.replace(/([^\"]+\"\:\s*)(\d{16,})(\,\s*\"[^\"]+|}$)/g, '$1"$2n"$3'), (k, v) => {
+		if (typeof v === 'string' && /^\d{16,}n$/.test(v)) {
+			v = BigInt(v.slice(0, -1))
+		}
+		return typeof reviver === 'function' ? reviver(k, v) : v
+	})
 }
 
-export function stringifyJSON(value) {
-	return JSON.stringify(value, replacer)
-		.replace(/([^\"]+\"\:\s*)(?:\")(\d{16,})(?:n\")(\,\s*\"[^\"]+|}$)/g, '$1$2$3')
-}
-
-function reviver(_, v) {
-	return typeof v === 'string' && /^\d{16,}n$/.test(v) ? BigInt(v.slice(0, -1)) : v
-}
-
-function replacer(_, v) {
-	return typeof v === 'bigint' ? v.toString() + 'n' : v
+/**
+ * @param {*} value
+ * @param {(function(any,any):any)|((number|string)[])=} replacer
+ * @param {string|number=} space
+ */
+export function stringifyJSON(value, replacer, space) {
+	return JSON.stringify(value, (k, v) => {
+		if (typeof v === 'bigint') {
+			v = v.toString() + 'n'
+		}
+		return typeof replacer === 'function' ? replacer(k, v) : v
+	}, space).replace(/([^\"]+\"\:\s*)(?:\")(\d{16,})(?:n\")(\,\s*\"[^\"]+|}$)/g, '$1$2$3')
 }
 
 export default {
