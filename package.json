@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasparada/json-bigint",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "BigInt support for JSON encoding",
 	"main": "json-bigint.js",
 	"browser": "json-bigint.js",

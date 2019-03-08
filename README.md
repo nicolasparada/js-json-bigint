@@ -4,12 +4,12 @@ JavaScript library that allows encoding JSON with BigInt support.
 
 JavaScript doesn't work with numbers too big. If you are working with 64-bit integers in your server, this library got you covered.
 
-No dependencies. 2.24 kB.
+No dependencies. 355 bytes.
 
 ## Example
 
 ```js
-import JSONBigInt from 'https://unpkg.com/@nicolasparada/json-bigint@0.2.0/json-bigint.js'
+import JSONBigInt from 'https://unpkg.com/@nicolasparada/json-bigint@0.3.0/json-bigint.js'
 
 const input = '{"big":9223372036854775807,"small":123}'
 console.log('input:', input)
@@ -38,5 +38,3 @@ JSONBigInt
     parsed: { big: 9223372036854775807n, small: 123 }
     stringified: {"big":9223372036854775807,"small":123}
 ```
-
-Thanks to [Douglas Crockford](https://github.com/douglascrockford) for his original [JSON implementation](https://github.com/douglascrockford/JSON-js).
