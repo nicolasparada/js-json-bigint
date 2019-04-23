@@ -9,7 +9,7 @@ No dependencies. 443 bytes.
 ## Example
 
 ```js
-import JSONBigInt from 'https://unpkg.com/@nicolasparada/json-bigint@0.4.0/json-bigint.js'
+import JSONBigInt from 'https://unpkg.com/@nicolasparada/json-bigint@0.5.0/json-bigint.js'
 
 const input = '{"big":9223372036854775807,"small":123}'
 console.log('input:', input)

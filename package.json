@@ -1,10 +1,11 @@
 {
 	"name": "@nicolasparada/json-bigint",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "BigInt support for JSON encoding",
 	"main": "json-bigint.js",
 	"browser": "json-bigint.js",
 	"module": "json-bigint.js",
+	"type": "module",
 	"files": [
 		"json-bigint.js"
 	],
