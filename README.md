@@ -2,7 +2,7 @@
 
 JavaScript library that allows encoding JSON with BigInt support.
 
-JavaScript doesn't work with numbers too big. If you are working with 64-bit integers in your server, this library got you covered.
+JavaScript JSON API doesn't work with numbers too big. If you are working with 64-bit integers in your server, this library got you covered. 64-bits integers will be parsed as bigint 😉
 
 No dependencies. 443 bytes.
 
